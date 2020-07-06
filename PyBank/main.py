@@ -33,7 +33,6 @@ with open(csvpath, newline="") as csvfile:
     # Create script to calculate the following:
 
         #The total number of months included in the dataset
-        
         months += 1
         total += int(row[1])
 
@@ -63,7 +62,7 @@ print("\n\nFinancial Analysis")
 print("----------------------------")
 print(f"Months total in Analysis:  {months}")
 print(f"Total:  ${total}")
-print(f" Average  Change: ${total_change:.2f}")
+print(f"Average Change: ${total_change:.2f}")
 print(f"Greatest Increase in Profits: {inc[0]} (${inc[1]})")
 print(f"Greatest Decrease in Profits: {dec[0]} (${dec[1]})")
 
@@ -74,6 +73,6 @@ with open(pathout, "w") as results:
      results.write("----------------------------\n")
      results.write(f"Months total in Analysis:  {months}\n")
      results.write(f"Total:  ${total}\n")
-     results.write(f" Average  Change: ${total_change:.2f}\n")
+     results.write(f"Average Change: ${total_change:.2f}\n")
      results.write(f"Greatest Increase in Profits: {inc[0]} (${inc[1]})\n")
      results.write(f"Greatest Decrease in Profits: {dec[0]} (${dec[1]})\n")
