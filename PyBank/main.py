@@ -1,10 +1,8 @@
 # PyBank analysis script
 #
 #
-# Import the os module
+# Import the os module and the csv module
 import os
-
-# Module for reading CSV files
 import csv
 
 # Set path for data
@@ -12,6 +10,8 @@ csvpath = os.path.join( "Resources", "budget_data.csv")
 pathout = os.path.join( "Analysis", "budget_analysis.txt")
 
 # Lists and variables to store data
+date = []
+monthly_pnl = []
 months = 0
 total = 0 
 prev_rev = 0
@@ -70,10 +70,10 @@ print(f"Greatest Decrease in Profits: {dec[0]} (${dec[1]})")
 
  # Export a text file with the results to Analysis folder
 with open(pathout, "w") as results:
-     results.write("\n\nFinancial Analysis")
-     results.write("----------------------------")
-     results.write(f"Months total in Analysis:  {months}")
-     results.write(f"Total:  ${total}")
-     results.write(f" Average  Change: ${total_change:.2f}")
-     results.write(f"Greatest Increase in Profits: {inc[0]} (${inc[1]})")
-     results.write(f"Greatest Decrease in Profits: {dec[0]} (${dec[1]})")
+     results.write("\n\nFinancial Analysis\n")
+     results.write("----------------------------\n")
+     results.write(f"Months total in Analysis:  {months}\n")
+     results.write(f"Total:  ${total}\n")
+     results.write(f" Average  Change: ${total_change:.2f}\n")
+     results.write(f"Greatest Increase in Profits: {inc[0]} (${inc[1]})\n")
+     results.write(f"Greatest Decrease in Profits: {dec[0]} (${dec[1]})\n")
