@@ -11,12 +11,10 @@ import csv
 csvpath = os.path.join( "Resources", "budget_data.csv")
 pathout = os.path.join( "Analysis", "budget_analysis.txt")
 
-# Lists to store data
+# Lists and variables to store data
 monthly_pnl = []
 profits = []
 date = []
-
-# Create variables where required
 months = 0
 net_pnl = 0
 pnl_change = 0
@@ -37,6 +35,7 @@ with open(csvpath, newline="") as csvfile:
     # Create script to calculate the following:
 
         #The total number of months included in the dataset
+        
         months =+ 1
 
         # The net total amount of "Profit/Losses" over the entire period
@@ -52,11 +51,11 @@ with open(csvpath, newline="") as csvfile:
         # The greatest increase in profits (date and amount) over the entire period
         # The greatest decrease in losses (date and amount) over the entire period
 
-        greatest_inc = int(monthly_pnl)
-        greatest_dec = int(monthly_pnl)
+        greatest_inc = int(monthly_pnl_change)
+        greatest_dec = int(monthly_pnl_change)
 
-        inc_pnl = date[monthly_pnl.index(greatest_inc)]
-        dec_pnl = date[monthly_pnl.index(greatest_dec)]
+        inc_pnl = [date[monthly_pnl_change.index(greatest_inc)]]
+        dec_pnl = [date[monthly_pnl_change.index(greatest_dec)]]
 
 # Print the analysis to the terminal
 print("Financial Analysis")

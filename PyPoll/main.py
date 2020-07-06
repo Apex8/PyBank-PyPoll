@@ -1,7 +1,6 @@
 #PyPoll challenge
 #
 # Import the os module
-
 import os
 
 # Module for reading CSV files
@@ -9,11 +8,15 @@ import csv
 
 csvpath = os.path.join( 'Resources', 'election_data.csv')
 
+# Lists and variables to store data
+canidates = []
+vote_count = []
+votes_cast = 0
+
 with open(csvpath) as csvfile:
 
     # CSV reader specifies delimiter and variable that holds contents
     csvreader = csv.reader(csvfile, delimiter=',')
-
     print(csvreader)
 
     # Read the header row first
