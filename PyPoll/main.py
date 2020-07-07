@@ -50,14 +50,14 @@ with open(csvpath) as csvfile:
                 votes_otooley = len(otooley)
 
     # The percentage of votes each candidate won.
-    per_khan = round(((votes_khan / voter_total) * 100), 2)
-    per_correy = round(((votes_correy / voter_total) * 100), 2)
-    per_li = round(((votes_li / voter_total) * 100), 2)
-    per_otooley = round(((votes_otooley / voter_total) * 100), 2)
+        per_khan = round(((votes_khan / voter_total) * 100), 2)
+        per_correy = round(((votes_correy / voter_total) * 100), 2)
+        per_li = round(((votes_li / voter_total) * 100), 2)
+        per_otooley = round(((votes_otooley / voter_total) * 100), 2)
 
     # The winner of the election based on popular vote.
-    #def winner(candidates): 
-        #return max(set(candidates), key = candidates.count)
+def winner(candidates): 
+    return max(set(candidates), key = candidates.count)
 
 # Print the analysis to the terminal.
 #
@@ -83,7 +83,7 @@ print(f"Correy: %{per_correy} ({votes_correy})")
 print(f"Li: %{per_li} ({votes_li})")
 print(f"O'Tooley: %{per_otooley} ({votes_otooley})")
 print("----------------------------")
-#print(f"Winner: ({winner})")
+print(f"Winner: ({winner})")
 print("----------------------------")
 
 #  Export a text file with the results to Analysis folder.
@@ -97,5 +97,5 @@ with open(pathout, "w") as results:
     results.write(f"Li: %{per_li} ({votes_li})\n")
     results.write(f"O'Tooley: %{per_otooley} ({votes_otooley})\n")
     results.write("----------------------------\n")
-    #results.write(f"Winner: ({winner})\n")
+    results.write(f"Winner: ({winner})\n")
     results.write("----------------------------\n")
