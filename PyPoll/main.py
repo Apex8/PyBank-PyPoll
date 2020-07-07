@@ -12,9 +12,11 @@ pathout = os.path.join( "Analysis", "election_results.txt")
 # Lists and variables to store data
 candidates = []
 votes = []
-percentages = []
-vote_count = 0
-can_index = 0
+county = []
+otooley = []
+khan = []
+correy = []
+li = []
 
 #Extract Data from election_data.csv to create three columns: `Voter ID`, `County`, and `Candidate`
 with open(csvpath) as csvfile:
@@ -23,19 +25,29 @@ with open(csvpath) as csvfile:
     csvreader = csv.reader(csvfile, delimiter=',')
     csv_header = next(csvreader)
 
-    # Read each row of data after the header
+    # Read each row of data after the header and loop through rows
     for row in csvreader:
+        votes.append(row[0])
+        county.append(row[1])
+        candidates.append(row[2])
         
     # The total number of votes cast
-        vote_count = vote_count + 1
+        voter_total = len(row [1])
 
-    # A complete list of candidates who received votes
-        if candidate in candidates:
-            can_index = candidates.index(candidate)
-            vote_count[can_index] = vote_count[can_index] + 1
-        else:
-            candidates.append(candidate)
-            vote_count.append(1)
+    # A complete list of candidates who received votes and the total number of votes each candidate won.
+        for can in candidates:
+            if can == "khan":
+                khan.append(candidates)
+                votes_khan = len(khan)
+            elif can == "correy":
+                correy.append(candidates)
+                votes_correy = len(correy)
+            elif can == "li":
+                li.append(candidates)
+                votes_li = len(li)
+            else:
+                otooley.append(candidates)
+                votes_otooley = len(otooley)
 
     # The percentage of votes each candidate won.
     # The total number of votes each candidate won.
@@ -60,7 +72,7 @@ print("Election Results")
 print("----------------------------")
 print(f"Total votes:  {votes}")
 print("----------------------------")
-print(f"Khan: ")
+print(f"Khan: {votes_khan}  ")
 print(f"")
 print(f"")
 print(f"")
