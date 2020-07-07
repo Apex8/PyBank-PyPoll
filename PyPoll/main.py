@@ -20,8 +20,6 @@ li = []
 
 #Extract Data from election_data.csv to create three columns: `Voter ID`, `County`, and `Candidate`
 with open(csvpath) as csvfile:
-
-    # CSV reader specifies delimiter and variable that holds contents
     csvreader = csv.reader(csvfile, delimiter=',')
     csv_header = next(csvreader)
 
@@ -50,14 +48,14 @@ with open(csvpath) as csvfile:
                 votes_otooley = len(otooley)
 
     # The percentage of votes each candidate won.
-        per_khan = round(((votes_khan / voter_total) * 100), 2)
-        per_correy = round(((votes_correy / voter_total) * 100), 2)
-        per_li = round(((votes_li / voter_total) * 100), 2)
-        per_otooley = round(((votes_otooley / voter_total) * 100), 2)
+    per_khan = round(((votes_khan / voter_total) * 100), 2)
+    per_correy = round(((votes_correy / voter_total) * 100), 2)
+    per_li = round(((votes_li / voter_total) * 100), 2)
+    per_otooley = round(((votes_otooley / voter_total) * 100), 2)
 
     # The winner of the election based on popular vote.
-def winner(candidates): 
-    return max(set(candidates), key = candidates.count)
+    def winner(candidates):
+        return max(set(candidates), key = candidates.count)
 
 # Print the analysis to the terminal.
 #
@@ -99,3 +97,5 @@ with open(pathout, "w") as results:
     results.write("----------------------------\n")
     results.write(f"Winner: ({winner})\n")
     results.write("----------------------------\n")
+
+# Keep trying to run but python file wont start
